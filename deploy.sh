@@ -1,5 +1,18 @@
 #!/bin/bash
 
+set -e
+
+# 备份当前版本
+backup() {
+    echo "📦 Creating backup..."
+    timestamp=$(date +%Y%m%d_%H%M%S)
+    mkdir -p backups
+    cp -r build "backups/build_$timestamp"
+}
+
+# 部署前备份
+backup || { echo "❌ Backup failed"; exit 1; }
+
 echo "🚀 Starting deployment..."
 
 # 拉取最新代码
