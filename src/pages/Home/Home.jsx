@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import HeroSection from '../../components/HeroSection/HeroSection';
 import SkillsSection from '../../components/SkillsSection/SkillsSection';
 import ExperienceSection from '../../components/ExperienceSection/ExperienceSection';
+import ProjectsSection from '../../components/ProjectsSection/ProjectsSection';
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
         <HeroSection />
         <SkillsSection />
         <ExperienceSection />
+        <ProjectsSection />
         {/* 后续会添加更多部分，如 ProjectsSection */}
       </main>
     </>
