@@ -10,6 +10,7 @@
 
 # production
 /build
+/backups
 
 # misc
 .DS_Store
@@ -31,3 +32,22 @@ npm-debug.log
 .env.production.local
 build
 .DS_Store
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# deployment script
+deploy.sh

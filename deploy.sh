@@ -15,6 +15,9 @@ backup || { echo "❌ Backup failed"; exit 1; }
 
 echo "🚀 Starting deployment..."
 
+# 确保当前用户有权限操作目录
+sudo chown -R $USER:$USER /var/www/raysun.dev
+
 # 拉取最新代码
 echo "📥 Pulling latest changes..."
 git pull origin main
@@ -22,6 +25,10 @@ git pull origin main
 # 安装依赖
 echo "📦 Installing dependencies..."
 npm install
+
+# 如果build目录存在，删除它
+echo "🗑️ Cleaning build directory..."
+rm -rf build
 
 # 构建项目
 echo "🛠️ Building project..."
